@@ -11,6 +11,7 @@ A user opens the web app when they're looking for something to do during the day
 ## Models
 - User chooses the times they're available from dropdown menus.
 - Output of all the events the user could attend during the times they're available.
+![paperDesign.jpg](paperDesign.jpg)
 
 ## Views
 - Index.hbs (landing page) - options to choose type of events you're interested, location, and start and end times available
