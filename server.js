@@ -11,7 +11,9 @@ const server = express();
 // mongoose.connect('mongodb://localhost/example-app');
 server.use(express.static('public'));
 
-server.engine('handlebars', handlebars({ defaultLayout: 'index' }));
+server.engine('handlebars', handlebars({
+  defaultLayout: 'index'
+}));
 server.set('view engine', 'handlebars');
 
 //  database stuff
@@ -22,7 +24,6 @@ server.set('view engine', 'handlebars');
 // });
 //
 
-
 server.get('/', (req, res) => {
   res.render('home')
 })
@@ -31,24 +32,32 @@ server.get('/', (req, res) => {
 server.get('/search', (req, res) => {
   const eventType = req.query.eventType;
   const location = req.query.location;
-  const radius = req.query.radius;
 
-  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&location.within=${radius}mi&sort_by=date`)
+
+
+  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&sort_by=date`)
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
     //  we have the stuff make ___ - THIS IS HANDLEBARS -.render is part of handlbars
+
     .then((json) => {
-      // console.log(JSON.stringify(events.name.['text']))
-      console.log(json.events[0].url);
-      res.render('home', { events: json.events })
+      // time
+      json.events.map((event) => {
+        event.start.formatted = new Date((event.start.local));
+        return event;
+      });
+
+      res.render('home', {
+        events: json.events
+      });
     }).catch(err => console.log(err));
 });
 
 //  put on localhost:3000
-server.get('/', (req, res) => {
-  Person.find()
-    .then(person => res.render('home', { Person }));
-});
+// server.get('/', (req, res) => {
+//   Person.find()
+//     .then(person => res.render('home', { Person }));
+// });
 
 server.listen(3000, () => {
   console.log("We're on port 3000");

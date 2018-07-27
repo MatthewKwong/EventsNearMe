@@ -5,20 +5,20 @@
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title" id="test" style="background: url({{this.logo.url}});   background-size: cover;
         background-repeat: none;">
-        <h2 class="mdl-card__title-text">{{this.name.text}}</h2>
+            <h2 class="mdl-card__title-text">{{this.name.text}}</h2>
+
       </div>
       <div class="mdl-card__supporting-text">
-        <!-- Start: {{this.start.local}}
-        <br> -->
+        <p class = "time">{{this.start.formatted}}</p>
+
         {{this.description.text}}
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{this.url}}">
-      Read More
-    </a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{this.url}}">Read More</a>
       </div>
       <div class="mdl-card__menu">
-        <a href="mailto:?subject=Check out {{this.name.text}}! &amp;body=Check out the {{this.name.text}} event at {{this.url}}" <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <a href="mailto:?subject=Check out {{this.name.text}}! &amp;body=Check out the {{this.name.text}} event at {{this.url}}">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
       <i class="material-icons">share</i>
     </button>
   </a>
