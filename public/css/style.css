@@ -23,6 +23,9 @@ body {
   text-align: center;
   padding: 2px;
   background-color: #50ADD9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #search-container {
@@ -57,55 +60,7 @@ body {
 /* search bar */
 
 .mdl-js-textfield {
-  width: 200px;
-}
-
-/*Boxes*/
-
-.container {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "a a c b" "a a c b" "e d d b" "e d d f";
-}
-
-.a {
-  grid-area: a;
-  background-color: #FE6D64;
-}
-
-.b {
-  grid-area: b;
-  background-color: #C3FF7F;
-}
-
-.c {
-  grid-area: c;
-  background-color: #9988FF;
-}
-
-.d {
-  grid-area: d;
-  background-color: #FAC24D;
-}
-
-.e {
-  grid-area: e;
-  background-color: #1BC9C8;
-}
-
-.f {
-  grid-area: f;
-  background-color: #D96C06;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.box {
-  padding: 1em;
-  height: 200px;
+  width: 250px;
 }
 
 /*TIME */
@@ -116,4 +71,10 @@ body {
   color: black;
   font-size: 15px;
   /* top: 15px */
+}
+
+/*Text Fields*/
+
+.mdl-textfield__input {
+  font-size: 25px;
 }

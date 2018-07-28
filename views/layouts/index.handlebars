@@ -8,7 +8,8 @@
   <!--Material Light-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="../javascript/script.js"></script>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
   <!--End of Material Light-->
@@ -20,17 +21,20 @@
 
   <!-- Textfield with Floating Label -->
 
+
 <div class = "searchbar">
+
 <form action="/search" method="GET">
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "margin-top: 20px;">
     <input name="eventType" class="mdl-textfield__input" type="text" id="sample3" placeholder = "Example: Concert">
-    <label class="mdl-textfield__label" for="sample3">Type of event</label>
+    <label class="mdl-textfield__label" for="sample3" style = "font-size: 15px">Type of event</label>
   </div>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input name = "location" class="mdl-textfield__input" type="text" id="sample3" placeholder = "San Francisco, CA">
-    <label class="mdl-textfield__label" for="sample3">Location (City, State)</label>
+    <label class="mdl-textfield__label" for="sample3" style = "font-size: 15px">Location (City, State)</label>
   </div>
 
   <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -38,7 +42,7 @@
     <label class="mdl-textfield__label" for="sample3">Radius (Miles)</label>
   </div> -->
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input name = "startTime" class="mdl-textfield__input" type="text" id="sample3" placeholder = "12:00">
     <label class="mdl-textfield__label" for="sample3" >Start Time (12:00)</label>
   </div>
@@ -46,7 +50,7 @@
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input name = "endTime" class="mdl-textfield__input" type="text" id="sample3" placeholder = "24:00">
     <label class="mdl-textfield__label" for="sample3" >End Time (24:00)</label>
-  </div>
+  </div> -->
 
   <button type="submit" onclick = "search()" class="mdl-button mdl-js-button mdl-button--raised">Search</button>
 
