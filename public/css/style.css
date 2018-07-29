@@ -19,6 +19,8 @@ body {
   color: #fff;
 }
 
+/*Searchbar*/
+
 .searchbar {
   text-align: center;
   padding: 2px;
@@ -41,6 +43,12 @@ body {
   margin: 15px 10px 0;
 }
 
+.mdl-js-textfield {
+  width: 250px;
+}
+
+/*Cards*/
+
 .mdl-card__supporting-text {
   line-height: 25px;
   font-size: 15px;
@@ -57,10 +65,14 @@ body {
   font-weight: 600;
 }
 
-/* search bar */
+.demo-card-wide {
+  transition: all 0.3s ease;
+}
 
-.mdl-js-textfield {
-  width: 250px;
+.demo-card-wide:hover {
+  transform: scale(1.02);
+  filter: opacity(90%);
+  box-shadow: 0 1px rgba(0, 0, 0, .8);
 }
 
 /*TIME */
@@ -77,4 +89,8 @@ body {
 
 .mdl-textfield__input {
   font-size: 25px;
+}
+
+#sample3::placeholder {
+  color: white;
 }
