@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script src="jquery-3.3.1.min.js"></script>
-  <script src="../javascript/script.js"></script>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
   <!--End of Material Light-->
@@ -26,31 +25,41 @@
 
 <form action="/search" method="GET">
 
-
+<!-- Type of Event -->
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "margin-top: 20px; ">
-    <input name="eventType" class="mdl-textfield__input" type="text" id="sample3" style = "color: white;" placeholder = "Example: Concert">
+    <input name="eventType" class="mdl-textfield__input" type="text" id="sample3" style = "color: white;"
+     placeholder = "Example: Concert">
     <label class="mdl-textfield__label" for="sample3" style = "font-size: 15px; color: white">Type of event</label>
   </div>
 
+<!-- Location  -->
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input name = "location" class="mdl-textfield__input" type="text" id="sample3" style = "color: white;" placeholder = "San Francisco, CA">
+    <input name = "location" class="mdl-textfield__input" type="text" id="sample3" style = "color: white;"
+     placeholder = "San Francisco, CA">
     <label class="mdl-textfield__label" for="sample3" style = "font-size: 15px; color:white;">Location (City, State)</label>
   </div>
 
+<!-- Radius -->
   <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input name = "radius" class="mdl-textfield__input" type="text" id="sample3" placeholder = "1">
     <label class="mdl-textfield__label" for="sample3">Radius (Miles)</label>
   </div> -->
 
-  <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input name = "startTime" class="mdl-textfield__input" type="text" id="sample3" placeholder = "12:00">
-    <label class="mdl-textfield__label" for="sample3" >Start Time (12:00)</label>
+<!--Sart Time-->
+<!-- Use something like https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_time -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name = "startTime" class="mdl-textfield__input" id = "startTime" type="time" id="sample3" placeholder = "12:00" style = "color: white;">
+    <label class="mdl-textfield__label" for="sample3" style = "font-size: 15px; color:white;">Start Time (12:00 MA)</label>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<!-- End Time -->
+  <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input name = "endTime" class="mdl-textfield__input" type="text" id="sample3" placeholder = "24:00">
     <label class="mdl-textfield__label" for="sample3" >End Time (24:00)</label>
   </div> -->
+
+
+
 
   <button type="submit" onclick = "search()" class="mdl-button mdl-js-button mdl-button--raised">Search</button>
 
@@ -58,6 +67,8 @@
 </div>
 
   {{{body}}}
+  <h1 id = "demo"></h1>
+  <script src="/javascript/script.js"></script>
 
 </body>
 </html>

@@ -32,8 +32,7 @@ server.get('/', (req, res) => {
 server.get('/search', (req, res) => {
   const eventType = req.query.eventType;
   const location = req.query.location;
-
-
+  // const startTime = req.query.startTime;
 
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&sort_by=date`)
     //  going to the store with money and im returning with X
@@ -41,12 +40,13 @@ server.get('/search', (req, res) => {
     //  we have the stuff make ___ - THIS IS HANDLEBARS -.render is part of handlbars
 
     .then((json) => {
-      // time
+      // show the event time on each card
       json.events.map((event) => {
         event.start.formatted = new Date((event.start.local));
         return event;
       });
 
+      //  render page
       res.render('home', {
         events: json.events
       });
@@ -60,5 +60,6 @@ server.get('/search', (req, res) => {
 // });
 
 server.listen(3000, () => {
+
   console.log("We're on port 3000");
 });

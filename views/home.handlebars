@@ -6,13 +6,12 @@
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title" id="test" style="background: url({{this.logo.url}});   background-size: cover;
         background-repeat: none;">
-            <h2 class="mdl-card__title-text">{{this.name.text}}</h2>
+        <h2 class="mdl-card__title-text">{{this.name.text}}</h2>
 
       </div>
       <div class="mdl-card__supporting-text">
-        <p class = "time">{{this.start.formatted}}</p>
-
-        {{this.description.text}}
+        <p class="time">{{this.start.formatted}}</p>
+        <p>{{this.description.text}}</p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{this.url}}" target="_blank">Read More</a>
