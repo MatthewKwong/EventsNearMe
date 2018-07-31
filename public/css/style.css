@@ -1,4 +1,3 @@
-@import "@material/select/mdc-select";
 body {
   background-color: #E8E8E8;
 }
@@ -44,8 +43,24 @@ body {
   margin: 15px 10px 0;
 }
 
+/* width of textfields */
+
 .mdl-js-textfield {
   width: 250px;
+}
+
+#startTime-textfield {
+  width: 150px;
+}
+
+#startTime {
+  width: 150px;
+}
+
+/*placeholder of textfields*/
+
+.mdl-textfield__label {
+  color: white;
 }
 
 /*Cards*/
@@ -81,7 +96,6 @@ body {
 .time {
   /* position: absolute; */
   font-weight: 900;
-  color: black;
   font-size: 15px;
   /* top: 15px */
 }
@@ -89,9 +103,10 @@ body {
 /*Text Fields*/
 
 .mdl-textfield__input {
+  color: white;
   font-size: 25px;
 }
 
 #sample3::placeholder {
-  color: white;
+  color: grey;
 }

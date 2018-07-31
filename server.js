@@ -26,15 +26,32 @@ server.set('view engine', 'handlebars');
 
 server.get('/', (req, res) => {
   res.render('home')
-})
+});
 
 //  Events variable
 server.get('/search', (req, res) => {
+
   const eventType = req.query.eventType;
   const location = req.query.location;
-  // const startTime = req.query.startTime;
 
-  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&sort_by=date`)
+  let startTime = req.query.startTime;
+  let endTime = req.query.endTime;
+
+  const dateObj = new Date();
+  const month = dateObj.getUTCMonth() + 1; //  months from 1-12
+  const day = dateObj.getUTCDate();
+  const year = dateObj.getUTCFullYear();
+
+  startTime = year + "-" + month + "-" + day + "T" + startTime + ":00Z";
+  console.log(startTime);
+
+  endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
+  console.log(endTime);
+
+
+
+  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}
+     &date_modified.range_start=${startTime}&date_modified.range_end=${endTime}&start_date.keyword=today`)
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
     //  we have the stuff make ___ - THIS IS HANDLEBARS -.render is part of handlbars
