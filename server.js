@@ -1,3 +1,5 @@
+// var APIkey = config.APIkey;
+
 const fetch = require('node-fetch');
 //  calling that we're using the express library
 const express = require('express');
@@ -48,8 +50,6 @@ server.get('/search', (req, res) => {
   endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
   console.log(endTime);
 
-
-
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}
      &date_modified.range_start=${startTime}&date_modified.range_end=${endTime}&start_date.keyword=today`)
     //  going to the store with money and im returning with X
@@ -59,7 +59,10 @@ server.get('/search', (req, res) => {
     .then((json) => {
       // show the event time on each card
       json.events.map((event) => {
-        event.start.formatted = new Date((event.start.local));
+        event.start.formatted = new Date(event.start.local);
+        // console.log(event.start.formatted);
+
+
         return event;
       });
 

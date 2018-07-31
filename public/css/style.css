@@ -110,3 +110,15 @@ body {
 #sample3::placeholder {
   color: grey;
 }
+
+/*Autocomplete Location */
+
+.pac-item-query {
+  font-size: 15px;
+  /* font-family: GillSans, Calibri, Trebuchet, sans-serif; */
+}
+
+.pac-item {
+  padding: 7px;
+  font-size: 15px;
+}
