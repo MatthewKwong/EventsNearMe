@@ -35,6 +35,8 @@ body {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  /*padding bottom for the last boxes*/
+  padding-bottom: 15px;
 }
 
 #search-container>div {
@@ -50,17 +52,30 @@ body {
 }
 
 #startTime-textfield {
-  width: 150px;
+  width: 175px;
 }
 
 #startTime {
-  width: 150px;
+  width: 175px;
+}
+
+#endTime-textfield {
+  width: 175px;
+}
+
+#endTime {
+  width: 175px;
+}
+
+.time {
+  padding: 0;
 }
 
 /*placeholder of textfields*/
 
 .mdl-textfield__label {
-  color: white;
+  font-size: 15px !important;
+  color: white !important;
 }
 
 /*Cards*/
@@ -93,32 +108,98 @@ body {
 
 /*TIME */
 
-.time {
-  /* position: absolute; */
-  font-weight: 900;
-  font-size: 15px;
-  /* top: 15px */
+.mdl-textfield < .mdl-textfield__input {
+  color: white;
 }
 
 /*Text Fields*/
 
 .mdl-textfield__input {
-  color: white;
-  font-size: 25px;
-}
-
-#sample3::placeholder {
   color: grey;
+  font-size: 25px;
 }
 
 /*Autocomplete Location */
 
 .pac-item-query {
   font-size: 15px;
+  padding: 10px;
   /* font-family: GillSans, Calibri, Trebuchet, sans-serif; */
 }
 
 .pac-item {
-  padding: 7px;
   font-size: 15px;
+}
+
+.box-container {
+  text-align: center;
+  width: 1400px;
+  /* Declare the container as display grid */
+  display: grid;
+  /* declare three columns woth px sizes */
+  grid-template-columns: repeat(6, 1fr);
+  /* Declare the size of three rows */
+  /*     grid-template-rows: 50px repeat(4, 200px); */
+  /* The gap between rows and columns */
+  grid-gap: 10px 10px;
+  grid-template-areas: "a a y y y y" "a a y y y y" "d d e e f f" "d d e e f f" "c c c c b b" "c c c c b b";
+}
+
+.grid-a {
+  grid-area: a;
+}
+
+.grid-b {
+  grid-area: b;
+}
+
+.grid-c {
+  grid-area: c;
+}
+
+.grid-d {
+  grid-area: d;
+}
+
+.grid-e {
+  grid-area: e;
+}
+
+.grid-f {
+  grid-area: f;
+}
+
+.grid-z {
+  grid-area: z;
+}
+
+.grid-y {
+  grid-area: y;
+}
+
+.a {
+  background-image: url("https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.b {
+  background-color: bisque;
+}
+
+.c {
+  background-color: cadetblue;
+}
+
+.d {
+  background-color: cyan
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  padding: 20px;
+  height: 250px;
 }
