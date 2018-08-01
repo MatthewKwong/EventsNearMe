@@ -108,11 +108,22 @@ body {
 
 /*TIME */
 
-.mdl-textfield < .mdl-textfield__input {
-  color: white;
+.card-time {
+  /* position: absolute; */
+  font-weight: 900;
+  font-size: 15px;
+  /* top: 15px */
 }
 
 /*Text Fields*/
+
+.mdl-textfield {
+  font-weight: 900;
+}
+
+.mdl-textfield < .mdl-textfield__input {
+  color: white;
+}
 
 .mdl-textfield__input {
   color: grey;

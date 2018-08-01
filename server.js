@@ -30,7 +30,7 @@ server.get('/', (req, res) => {
 
 //  Events variable
 server.get('/search', (req, res) => {
-
+/* Start and End Times Events  */
   const eventType = req.query.eventType;
   const location = req.query.location;
 
@@ -48,6 +48,9 @@ server.get('/search', (req, res) => {
   endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
   console.log(endTime);
 
+
+
+
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
 
     //  going to the store with money and im returning with X
@@ -59,7 +62,27 @@ server.get('/search', (req, res) => {
       json.events.map((event) => {
         event.start.formatted = new Date(event.start.local);
         console.log(event.start.local);
+
+
+        //  formatted
+        event.start.hour = (event.start.local).getHours();
+        console.log(event.start.hour);
+
+        event.start.minute = (event.start.local).getMinutes();
+        console.log(event.start.minute);
+
+
+
+
         return event;
+
+
+
+
+
+
+
+
       });
 
       //  render page
