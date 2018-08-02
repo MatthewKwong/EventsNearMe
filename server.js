@@ -30,7 +30,7 @@ server.get('/', (req, res) => {
 
 //  Events variable
 server.get('/search', (req, res) => {
-/* Start and End Times Events  */
+  /* Start and End Times Events  */
   const eventType = req.query.eventType;
   const location = req.query.location;
 
@@ -51,7 +51,7 @@ server.get('/search', (req, res) => {
 
 
 
-  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
+  fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&sort_by=date&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
 
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
@@ -63,26 +63,75 @@ server.get('/search', (req, res) => {
         event.start.formatted = new Date(event.start.local);
         console.log(event.start.local);
 
+        // Start Hours
+        event.start.hours = new Date(event.start.local).getHours();
+        event.start.minutes = new Date(event.start.local).getMinutes();
 
-        //  formatted
-        event.start.hour = (event.start.local).getHours();
-        console.log(event.start.hour);
+        // End Hours
+        event.end.hours = new Date(event.end.local).getHours();
+        event.end.minutes = new Date(event.end.local).getMinutes();
+        let dayOrNight = 'am';
 
-        event.start.minute = (event.start.local).getMinutes();
-        console.log(event.start.minute);
+        //  Start Hours
+        if (new Date(event.start.local).getHours() > 12) {
+          event.start.hours = new Date(event.start.local).getHours() - 12;
+          dayOrNight = 'pm';
+        }
+        else if(new Date(event.start.local).getHours() === 12) {
+          event.start.hours = new Date(event.start.local).getHours();
+          dayOrNight = 'pm';
+        }
+        else if(new Date(event.start.local).getHours() === 0) {
+          event.start.hours = 12;
+          dayOrNight = 'am';
+        }
+        //  End Hours
+        if (new Date(event.end.local).getHours() > 12) {
+          event.end.hours = new Date(event.end.local).getHours() - 12;
+          dayOrNight = 'pm';
+        }
+        else if(new Date(event.end.local).getHours() === 12) {
+          event.end.hours = new Date(event.end.local).getHours();
+          dayOrNight = 'pm';
+        }
+        else if(new Date(event.end.local).getHours() === 0) {
+          event.end.hours = 12;
+          dayOrNight = 'am';
+        }
+
+        // Start - Full complete output
+        event.start.startOutput = (event.start.hours + ":" +  event.start.minutes + dayOrNight);
+
+        //  If event needs :00
+        if(new Date(event.start.local).getMinutes() === 0) {
+          event.start.startOutput =  (event.start.hours + ":00" + dayOrNight);
+        }
+
+        else{
+          event.start.startOutput = (event.start.hours + ":" +  event.start.minutes + dayOrNight);
+        }
+        console.log(event.start.startOutput);
+
+        // End - Full complete output
+        event.end.endOutput = (event.end.hours + ":" +  event.end.minutes + dayOrNight);
+
+        //  If event needs :00
+        if(new Date(event.end.local).getMinutes() === 0) {
+          event.end.endOutput =  (event.end.hours + ":00" + dayOrNight);
+        }
+        else{
+          event.end.endOutput = (event.end.hours + ":" +  event.end.minutes + dayOrNight);
+        }
+        console.log(event.end.endOutput);
 
 
+        // Free Events
+        if (event.is_free === true) {
+          event.price = "FREE";
+        }
 
 
         return event;
-
-
-
-
-
-
-
-
       });
 
       //  render page

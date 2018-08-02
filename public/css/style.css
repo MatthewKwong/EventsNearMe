@@ -91,7 +91,7 @@ body {
 }
 
 .mdl-card__title-text {
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   filter: opacity(100%);
   font-weight: 600;
 }
@@ -213,4 +213,8 @@ body {
 .box {
   padding: 20px;
   height: 250px;
+}
+
+element.style {
+  text-shadow: 2px 2px black;
 }
