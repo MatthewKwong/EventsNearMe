@@ -147,6 +147,7 @@ server.get('/search', (req, res) => {
 //     .then(person => res.render('home', { Person }));
 // });
 
+//process.env.PORT is Heroku and 3000 is local
 server.listen(process.env.PORT || 3000, () => {
 
   console.log("We're on port 3000");
