@@ -147,7 +147,7 @@ server.get('/search', (req, res) => {
 //     .then(person => res.render('home', { Person }));
 // });
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
 
   console.log("We're on port 3000");
 });
