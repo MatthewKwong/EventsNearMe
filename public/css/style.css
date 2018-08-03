@@ -28,6 +28,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 30px;
+  margin-top: 350px;
 }
 
 #search-container {
@@ -142,79 +144,20 @@ body {
   font-size: 15px;
 }
 
+element.style {
+  text-shadow: 2px 2px black;
+}
+
 .box-container {
-  text-align: center;
-  width: 1400px;
-  /* Declare the container as display grid */
   display: grid;
-  /* declare three columns woth px sizes */
-  grid-template-columns: repeat(6, 1fr);
-  /* Declare the size of three rows */
-  /*     grid-template-rows: 50px repeat(4, 200px); */
-  /* The gap between rows and columns */
-  grid-gap: 10px 10px;
-  grid-template-areas: "a a y y y y" "a a y y y y" "d d e e f f" "d d e e f f" "c c c c b b" "c c c c b b";
-}
-
-.grid-a {
-  grid-area: a;
-}
-
-.grid-b {
-  grid-area: b;
-}
-
-.grid-c {
-  grid-area: c;
-}
-
-.grid-d {
-  grid-area: d;
-}
-
-.grid-e {
-  grid-area: e;
-}
-
-.grid-f {
-  grid-area: f;
-}
-
-.grid-z {
-  grid-area: z;
-}
-
-.grid-y {
-  grid-area: y;
-}
-
-.a {
-  background-image: url("https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.b {
-  background-color: bisque;
-}
-
-.c {
-  background-color: cadetblue;
-}
-
-.d {
-  background-color: cyan
-}
-
-* {
-  box-sizing: border-box;
+  height: 500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
 }
 
 .box {
-  padding: 20px;
-  height: 250px;
-}
-
-element.style {
-  text-shadow: 2px 2px black;
+  width: 50%;
+  height: 50%;
+  border: 2px solid black;
 }
