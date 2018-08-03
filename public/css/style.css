@@ -1,0 +1,163 @@
+body {
+  background-color: #E8E8E8;
+}
+
+.material-icons {
+  color: white;
+}
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+
+.demo-card-wide>.mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+
+.demo-card-wide>.mdl-card__menu {
+  color: #fff;
+}
+
+/*Searchbar*/
+
+.searchbar {
+  text-align: center;
+  padding: 2px;
+  background-color: #50ADD9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 30px;
+  margin-top: 350px;
+}
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*padding bottom for the last boxes*/
+  padding-bottom: 15px;
+}
+
+#search-container>div {
+  display: flex;
+  justify-content: center;
+  margin: 15px 10px 0;
+}
+
+/* width of textfields */
+
+.mdl-js-textfield {
+  width: 250px;
+}
+
+#startTime-textfield {
+  width: 175px;
+}
+
+#startTime {
+  width: 175px;
+}
+
+#endTime-textfield {
+  width: 175px;
+}
+
+#endTime {
+  width: 175px;
+}
+
+.time {
+  padding: 0;
+}
+
+/*placeholder of textfields*/
+
+.mdl-textfield__label {
+  font-size: 15px !important;
+  color: white !important;
+}
+
+/*Cards*/
+
+.mdl-card__supporting-text {
+  line-height: 25px;
+  font-size: 15px;
+  max-height: 100px;
+}
+
+.mdl-card__title {
+  filter: opacity(70%);
+}
+
+.mdl-card__title-text {
+  text-shadow: 2px 2px black;
+  filter: opacity(100%);
+  font-weight: 600;
+}
+
+.demo-card-wide {
+  transition: all 0.3s ease;
+}
+
+.demo-card-wide:hover {
+  transform: scale(1.02);
+  filter: opacity(90%);
+  box-shadow: 0 1px rgba(0, 0, 0, .8);
+}
+
+/*TIME */
+
+.card-time {
+  /* position: absolute; */
+  font-weight: 900;
+  font-size: 15px;
+  /* top: 15px */
+}
+
+/*Text Fields*/
+
+.mdl-textfield {
+  font-weight: 900;
+}
+
+.mdl-textfield < .mdl-textfield__input {
+  color: white;
+}
+
+.mdl-textfield__input {
+  color: grey;
+  font-size: 25px;
+}
+
+/*Autocomplete Location */
+
+.pac-item-query {
+  font-size: 15px;
+  padding: 10px;
+  /* font-family: GillSans, Calibri, Trebuchet, sans-serif; */
+}
+
+.pac-item {
+  font-size: 15px;
+}
+
+element.style {
+  text-shadow: 2px 2px black;
+}
+
+.box-container {
+  display: grid;
+  height: 500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+.box {
+  width: 50%;
+  height: 50%;
+  border: 2px solid black;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EventsNearMe</title>
+  <!--Material Light-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!--End of Material Light-->
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Textfield with Floating Label -->
+
+
+  <div class="searchbar">
+
+    <form action="/search" method="GET">
+
+      <!-- Type of Event -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top: 20px; ">
+        <input name="eventType" class="mdl-textfield__input " type="text" id="sample3" placeholder="Concert" style="color:white">
+        <label class="mdl-textfield__label " for="sample3">Event or Category</label>
+      </div>
+
+      <!-- Location  -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="location" class="mdl-textfield__input" id="location-autocomplete" type="text" id="sample3" placeholder="San Francisco, CA" style="color:white">
+        <label class="mdl-textfield__label" for="sample3">Location (City, State)</label>
+      </div>
+
+      <!-- Radius -->
+      <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name = "radius" class="mdl-textfield__input" type="text" id="sample3" placeholder = "1">
+    <label class="mdl-textfield__label" for="sample3">Radius (Miles)</label>
+  </div> -->
+
+      <!--Sart Time-->
+      <!-- Use something like https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_time -->
+      <div id="startTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label test">
+        <input name="startTime" class="mdl-textfield__input time" id="startTime" type="time" id="sample3" value="00:00" placeholder="time">
+        <label class="mdl-textfield__label"  for="sample3">Start Time (10:00 AM)</label>
+      </div>
+
+      <!-- End Time -->
+      <div id="endTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="endTime" class="mdl-textfield__input time" id="endTime" class="endTime" type="time" value="23:59" placeholder="time">
+        <label class="mdl-textfield__label" for="sample3">End Time (6:00 PM)</label>
+      </div>
+
+      <button type="submit" onclick="search()" id="submit" class="mdl-button mdl-js-button mdl-button--raised" style="color:white" ;>Search</button>
+
+    </form>
+  </div>
+  {{{body}}}
+
+  <!-- Define a container -->
+  <div class="box-container">
+    <div class="box">One</div>
+    <div class="box">Two</div>
+    <div class="box">Three</div>
+  </div>
+
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+  <script type='text/javascript' src="/javascript/script.js"></script>
+  <script type='text/javascript' src="/server.js"></script>
+
+</body>
+
+</html>
