@@ -11,6 +11,7 @@ A user opens the web app when they're looking for something to do during the day
 ## Models
 - User chooses the times they're available from dropdown menus.
 - Output of all the events the user could attend during the times they're available.
+![paperDesign.jpg](paperDesign.jpg)
 
 ## Views
 - Index.hbs (landing page) - options to choose type of events you're interested, location, and start and end times available
@@ -25,19 +26,19 @@ A user opens the web app when they're looking for something to do during the day
 ​
 # Weekly Milestones
 ## Week 1 - Usable Build
-- task 1: Mock-ups/wireframes
-- task 2: Start a GitHub repo
-- task 3: Add search bar with dropdown tabs
-- task 4: Research Eventbrite API
-- task 5: Organize results by time
-- task 6: Get user feedback
+- task 1: Mock-ups/wireframes ✔️
+- task 2: Start a GitHub repo ✔️
+- task 3: Add search bar with dropdown tabs ✔️
+- task 4: Research Eventbrite API ✔️
+- task 5: Organize results by time ✔️
+- task 6: Get user feedback ✔️
 
 Extra:
 - task 1: Implement StubHub API or other event based API
 - task 2: Add tagging system of which source something is coming from. (Ex: Eventbrite has an orange border and StubHub has purple border or green border means free)
 
 ## Week 2 - Finish Features
-- task 1: Add CSS
+- task 1: Add CSS ✔️
 - task 2: Make the application responsive
 - task 3: Get user feedback
 ​
