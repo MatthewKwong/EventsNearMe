@@ -20,9 +20,26 @@
 
 <body>
 
+<div id = "banner-image">
+  <div class = "slide fade">
+    <img src = "/photos/concert.jpeg">
+  </div>
+
+  <div class = "slide fade">
+    <img src = "/photos/bike.jpg">
+  </div>
+
+<div>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+</div>
+
+
+
   <!-- Textfield with Floating Label -->
-
-
   <div class="searchbar">
 
     <form action="/search" method="GET">
@@ -58,22 +75,19 @@
         <label class="mdl-textfield__label" for="sample3">End Time (6:00 PM)</label>
       </div>
 
-      <button type="submit" onclick="search()" id="submit" class="mdl-button mdl-js-button mdl-button--raised" style="color:white" ;>Search</button>
-
+      <button type="submit" onclick="search()" id="submit" class="mdl-button mdl-js-button mdl-button--raised"><b>Search</b></button>
     </form>
   </div>
-  {{{body}}}
 
   <!-- Define a container -->
-  <div class="box-container">
+  <!-- <div class="box-container">
     <div class="box">One</div>
     <div class="box">Two</div>
     <div class="box">Three</div>
-  </div>
+  </div> -->
 
 
-
-
+{{{body}}}
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
   <script type='text/javascript' src="/javascript/script.js"></script>
   <script type='text/javascript' src="/server.js"></script>

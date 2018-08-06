@@ -1,3 +1,50 @@
+/*Banner*/
+
+#banner-image {
+  height: 450px;
+  /*how far down the search bar is*/
+  margin-bottom: -100px;
+  repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+#banner-image img {
+  margin-top: -30%;
+  repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+}
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 4s;
+}
+
+@-webkit-keyframes fade {
+  0%, 100% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+}
+
 body {
   background-color: #E8E8E8;
 }
@@ -22,14 +69,19 @@ body {
 /*Searchbar*/
 
 .searchbar {
+  padding: 20px;
+  width: 1000px;
   text-align: center;
-  padding: 2px;
   background-color: #50ADD9;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 30px;
-  margin-top: 350px;
+  /*overlay the background banner*/
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  z-index: 1;
 }
 
 #search-container {
@@ -149,8 +201,9 @@ element.style {
 }
 
 .box-container {
+  margin-top: 100px;
   display: grid;
-  height: 500px;
+  height: 550px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   justify-items: center;
@@ -160,4 +213,17 @@ element.style {
   width: 50%;
   height: 50%;
   border: 2px solid black;
+}
+
+#submit {
+  height: 50px;
+  width: 100px;
+  margin-bottom: 20px;
+  transition-duration: .4s;
+  text-decoration: bold;
+  color: white;
+}
+
+#submit:hover {
+  background-color: #0DADD9;
 }
