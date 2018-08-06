@@ -19,7 +19,7 @@ $(document).ready(() => {
 });
 
 
-
+// Banner Slideshow
 let slideIndex = 0;
 
 function showSlides() {
@@ -40,3 +40,16 @@ function showSlides() {
 }
 
 showSlides();
+
+
+// Fast quick cards - longitude and latitude
+navigator.geolocation.getCurrentPosition(showPosition);
+
+function showPosition(position) {
+
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  console.log(latitude);
+  console.log(longitude);
+}

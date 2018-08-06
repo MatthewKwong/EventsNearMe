@@ -22,9 +22,9 @@
 
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: .5s;
   animation-name: fade;
-  animation-duration: 4s;
+  animation-duration: 10s;
 }
 
 @-webkit-keyframes fade {
