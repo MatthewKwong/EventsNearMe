@@ -1,0 +1,260 @@
+body {
+  background-color: #E8E8E8;
+}
+
+/*Banner*/
+
+#banner-image {
+  height: 390px;
+  /*how far down the search bar is*/
+  margin-bottom: -100px;
+  repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  border-bottom: 1px grey solid;
+}
+
+#banner-image img {
+  margin-top: -25%;
+  repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+}
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: .25s;
+  animation-name: fade;
+  animation-duration: 10s;
+}
+
+@-webkit-keyframes fade {
+  0%, 100% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+}
+
+body {
+  background-color: #E8E8E8;
+  /* overflow-y: hidden; */
+}
+
+/*placeholder of textfields*/
+
+.mdl-textfield__input::placeholder {
+  color: #D3D3D3;
+  opacity: .4;
+}
+
+* width of textfields */ .mdl-js-textfield {
+  width: 250px;
+}
+
+#startTime-textfield {
+  width: 175px;
+}
+
+#startTime {
+  width: 175px;
+}
+
+#endTime-textfield {
+  width: 175px;
+}
+
+#endTime {
+  width: 175px;
+}
+
+.time {
+  padding: 0;
+}
+
+/*placeholder of textfields*/
+
+.mdl-textfield__label {
+  font-size: 15px !important;
+  color: white !important;
+}
+
+.mdl-textfield__input::placeholder {
+  color: #D3D3D3;
+  /* opacity: .4; */
+}
+
+/*Searchbar*/
+
+.searchbar {
+  padding: 20px;
+  width: 1000px;
+  text-align: center;
+  /* background-color: #E0E0E0; */
+  background-color: #50ADD9;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*overlay the background banner*/
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0 1px rgba(0, 0, 0, .2);
+}
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*padding bottom for the last boxes*/
+  padding-bottom: 15px;
+}
+
+#search-container>div {
+  display: flex;
+  justify-content: center;
+  margin: 15px 10px 0;
+}
+
+/* width of textfields */
+
+.mdl-js-textfield {
+  width: 250px;
+}
+
+#startTime-textfield {
+  width: 175px;
+}
+
+#startTime {
+  width: 175px;
+}
+
+#endTime-textfield {
+  width: 175px;
+}
+
+#endTime {
+  width: 175px;
+}
+
+.time {
+  padding: 0;
+}
+
+/*Text Fields*/
+
+.mdl-textfield {
+  font-weight: 900;
+}
+
+.mdl-textfield < .mdl-textfield__input {
+  color: white;
+}
+
+.mdl-textfield__input {
+  color: #D3D3D3;
+  font-size: 25px;
+}
+
+/*Autocomplete Location */
+
+.pac-item-query {
+  font-size: 15px;
+  padding: 10px;
+  /* font-family: GillSans, Calibri, Trebuchet, sans-serif; */
+}
+
+.pac-item {
+  font-size: 15px;
+}
+
+#submit {
+  height: 50px;
+  width: 100px;
+  margin-bottom: 20px;
+  transition-duration: .4s;
+  text-decoration: bold;
+  color: white;
+}
+
+#submit:hover {
+  background-color: #0DADD9;
+}
+
+.box-container {
+  margin-top: 160px;
+  display: grid;
+  height: 475px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2;
+  justify-items: center;
+}
+
+.box {
+  text-align: center;
+  height: 200px;
+  width: 95%;
+  /* border: 2px solid black; */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: all 0.3s ease;
+  filter: opacity(75%);
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0, 0, 0, .3);
+}
+
+.box h1 {
+  color: white;
+  font-size: 30px;
+  margin-top: 80px;
+  font-weight: 400;
+}
+
+/*Sports, Food, Art, Music Cards*/
+
+.box:hover {
+  transform: scale(1.01);
+  filter: opacity(100%);
+  box-shadow: 3px 3px rgba(0, 0, 0, .1);
+}
+
+.sports {
+  background-image: url("/photos/baseball.jpg");
+}
+
+.food {
+  background-image: url("/photos/fruit.jpg");
+  background-size: cover;
+  background-position: 0 -100px;
+}
+
+.art {
+  background-image: url("/photos/art.jpg");
+  background-position: 0 -120px;
+}
+
+.music {
+  background-image: url("/photos/music.jpg");
+  background-size: cover;
+  background-position: 0 -125px;
+}

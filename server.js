@@ -8,6 +8,10 @@ const mongoose = require('mongoose');
 
 const server = express();
 
+const indexRouter = require('./routes/index');
+
+server.use('/none', indexRouter);
+
 // mongoose.connect('mongodb://localhost/example-app');
 server.use(express.static('public'));
 
@@ -16,16 +20,8 @@ server.engine('handlebars', handlebars({
 }));
 server.set('view engine', 'handlebars');
 
-//  database stuff
-// const Person = mongoose.model('person', {
-//   name: String,
-//   age: Number,
-//   gender: String,
-// });
-//
-
 server.get('/', (req, res) => {
-  res.render('home')
+  res.render('results')
 });
 
 //  Events variable
@@ -43,15 +39,15 @@ server.get('/search', (req, res) => {
   const year = dateObj.getUTCFullYear();
 
   startTime = year + "-" + month + "-" + day + "T" + startTime + ":00Z";
-  console.log(startTime);
+  console.log("Start time: " + startTime);
 
   endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
-  console.log(endTime);
-
+  console.log("End time: " + endTime);
 
 
 
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&sort_by=date&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
+    
 
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
@@ -130,21 +126,22 @@ server.get('/search', (req, res) => {
           event.price = "FREE";
         }
 
-
         return event;
       });
 
       //  render page
-      res.render('home', {
-        events: json.events
+      res.render('results', {
+        events: json.events,
       });
     }).catch(err => console.log(err));
 });
 
+
+
 //  put on localhost:3000
 // server.get('/', (req, res) => {
 //   Person.find()
-//     .then(person => res.render('home', { Person }));
+//     .then(person => res.render('results', { Person }));
 // });
 
 //process.env.PORT is Heroku and 3000 is local

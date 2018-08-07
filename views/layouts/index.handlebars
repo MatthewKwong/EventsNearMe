@@ -14,6 +14,7 @@
   <!--End of Material Light-->
 
   <!--Custom CSS-->
+  <link rel="stylesheet" href="/css/landingPage.css">
   <link rel="stylesheet" href="/css/style.css">
 
 </head>
@@ -26,7 +27,10 @@
   </div>
 
   <div class = "slide fade">
-    <img src = "/photos/bike.jpg">
+    <img src = "/photos/basketball.jpg">
+  </div>
+  <div class = "slide fade">
+    <img src = "/photos/food.jpg">
   </div>
 
 <div>
@@ -37,16 +41,15 @@
 
 </div>
 
-
-
   <!-- Textfield with Floating Label -->
+  <!-- <h1>HELLO</h1> -->
   <div class="searchbar">
 
     <form action="/search" method="GET">
 
       <!-- Type of Event -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top: 20px; ">
-        <input name="eventType" class="mdl-textfield__input " type="text" id="sample3" placeholder="Concert" style="color:white">
+        <input name="eventType" class="mdl-textfield__input " type="text" id="sample3" placeholder="" style="color:white">
         <label class="mdl-textfield__label " for="sample3">Event or Category</label>
       </div>
 
@@ -72,22 +75,25 @@
       <!-- End Time -->
       <div id="endTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input name="endTime" class="mdl-textfield__input time" id="endTime" class="endTime" type="time" value="23:59" placeholder="time">
-        <label class="mdl-textfield__label" for="sample3">End Time (6:00 PM)</label>
+        <label class="mdl-textfield__label" for="sample3">End Time (11:59 PM)</label>
       </div>
 
       <button type="submit" onclick="search()" id="submit" class="mdl-button mdl-js-button mdl-button--raised"><b>Search</b></button>
     </form>
   </div>
 
-  <!-- Define a container -->
-  <!-- <div class="box-container">
-    <div class="box">One</div>
-    <div class="box">Two</div>
-    <div class="box">Three</div>
-  </div> -->
+    <!-- Define a container -->
+   <div class="box-container">
+      <div class="box sports" action="/search" method="GET"><h1>Sports</h1></div>
+      <div class="box food"><h1>Food</h1></div>
+      <div class="box art"><h1>Art</h1></div>
+      <div class="box music"><h1>Music</h1></div>
+    </div>
+
+    <!-- {{{body}}} -->
 
 
-{{{body}}}
+
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
   <script type='text/javascript' src="/javascript/script.js"></script>
   <script type='text/javascript' src="/server.js"></script>
