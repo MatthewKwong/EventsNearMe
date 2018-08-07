@@ -39,9 +39,11 @@ Extra:
 
 ## Week 2 - Finish Features
 - task 1: Add CSS ✔️
-- task 2: Make the application responsive
-- task 3: Get user feedback
+- task 2: Make the application responsive✔️
+- task 3: Get user feedback ✔️
+    - advanced search bar with date selection
+    - filter unavailable / sold out events
 ​
 ## Week 3 - Polish
 - task 1: Work out user testing bugs / flow bugs
-- task 2: Host on server
+- task 2: Host on server ✔️ <-- events.matthewrkwong.com

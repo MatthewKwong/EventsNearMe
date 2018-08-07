@@ -47,7 +47,7 @@ server.get('/search', (req, res) => {
 
 
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&sort_by=date&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
-    
+
 
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
@@ -125,6 +125,7 @@ server.get('/search', (req, res) => {
         if (event.is_free === true) {
           event.price = "FREE";
         }
+
 
         return event;
       });
