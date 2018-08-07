@@ -11,12 +11,23 @@ $(document).ready(() => {
   });
 });
 
+
+
 // End Time
 $(document).ready(() => {
   $('#endTime-textfield > #endTime').click(() => {
     $('#endTime-textfield > #endTime').css('color', 'white');
   });
 });
+
+
+$(document).ready(() => {
+  if (window.location.pathname === '/search') {
+    // remove boxes here
+    $('.box-container').hide();
+  }
+})
+
 
 
 // Banner Slideshow
