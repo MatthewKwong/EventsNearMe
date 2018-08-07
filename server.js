@@ -25,7 +25,7 @@ server.set('view engine', 'handlebars');
 //
 
 server.get('/', (req, res) => {
-  res.render('home')
+  res.render('results')
 });
 
 //  Events variable
@@ -43,10 +43,11 @@ server.get('/search', (req, res) => {
   const year = dateObj.getUTCFullYear();
 
   startTime = year + "-" + month + "-" + day + "T" + startTime + ":00Z";
-  console.log(startTime);
+  console.log("Start time: " + startTime);
 
   endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
-  console.log(endTime);
+  console.log("End time: " + endTime);
+
 
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&sort_by=date&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
 
@@ -132,7 +133,7 @@ server.get('/search', (req, res) => {
       });
 
       //  render page
-      res.render('home', {
+      res.render('results', {
         events: json.events
       });
     }).catch(err => console.log(err));
@@ -141,7 +142,7 @@ server.get('/search', (req, res) => {
 //  put on localhost:3000
 // server.get('/', (req, res) => {
 //   Person.find()
-//     .then(person => res.render('home', { Person }));
+//     .then(person => res.render('results', { Person }));
 // });
 
 server.listen(3000, () => {
