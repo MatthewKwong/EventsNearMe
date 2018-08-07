@@ -1,3 +1,7 @@
+// Fast quick cards - longitude and latitude
+navigator.geolocation.getCurrentPosition(showPosition);
+
+
 //  Google Maps
 const input = document.getElementById('location-autocomplete');
 const autocomplete = new google.maps.places.Autocomplete(input, {
@@ -30,6 +34,20 @@ $(document).ready(() => {
 
 
 
+function showPosition(position) {
+
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  console.log(latitude);
+  console.log(longitude);
+
+  $('#sports').click(() => {
+    $('#eventType').val('sports')
+    const queryString = $('#form').formSerialize();
+    window.location.href = '/search?' + queryString 
+  })
+}
 // Banner Slideshow
 let slideIndex = 0;
 
@@ -38,10 +56,12 @@ function showSlides() {
   let slides = document.getElementsByClassName('slide');
   let dots = document.getElementsByClassName('dot');
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display ='none';
+    slides[i].style.display = 'none';
   }
   slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1}
+  if (slideIndex > slides.length) {
+    slideIndex = 1
+  }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(' active', '');
   }
@@ -51,16 +71,3 @@ function showSlides() {
 }
 
 showSlides();
-
-
-// Fast quick cards - longitude and latitude
-navigator.geolocation.getCurrentPosition(showPosition);
-
-function showPosition(position) {
-
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-
-  console.log(latitude);
-  console.log(longitude);
-}
