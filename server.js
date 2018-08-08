@@ -134,6 +134,9 @@ server.get('/search', (req, res) => {
       res.render('results', {
         events: json.events,
       });
+
+
+
     }).catch(err => console.log(err));
 });
 
