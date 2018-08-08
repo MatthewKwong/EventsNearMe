@@ -34,10 +34,12 @@ $(document).ready(() => {
 
 
 
-function showPosition(position) {
 
+
+function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
+
 
   console.log(latitude);
   console.log(longitude);
@@ -45,8 +47,32 @@ function showPosition(position) {
   $('#sports').click(() => {
     $('#eventType').val('sports')
     const queryString = $('#form').formSerialize();
-    window.location.href = '/search?' + queryString 
+    window.location.href = '/search?' + queryString;
+    console.log(queryString);
   })
+
+  $('#food').click(() => {
+    $('#eventType').val('food')
+    const queryString = $('#form').formSerialize();
+    window.location.href = '/search?' + queryString;
+    console.log(queryString);
+  })
+
+  $('#art').click(() => {
+    $('#eventType').val('art')
+    const queryString = $('#form').formSerialize();
+    window.location.href = '/search?' + queryString;
+    console.log(queryString);
+  })
+
+  $('#music').click(() => {
+    $('#eventType').val('music')
+    const queryString = $('#form').formSerialize();
+    window.location.href = '/search?' + queryString;
+    console.log(queryString);
+  })
+
+
 }
 // Banner Slideshow
 let slideIndex = 0;
