@@ -204,6 +204,8 @@ body {
   background-color: #0DADD9;
 }
 
+/*Sports, Food, Art, Music Cards*/
+
 .box-container {
   margin-top: 140px;
   display: grid;
@@ -232,9 +234,8 @@ body {
   font-size: 30px;
   margin-top: 80px;
   font-weight: 400;
+  text-shadow: 2px 2px black;
 }
-
-/*Sports, Food, Art, Music Cards*/
 
 .box:hover {
   transform: scale(1.01);
@@ -247,13 +248,13 @@ body {
 }
 
 .food {
-  background-image: url("/photos/fruit.jpg");
+  background-image: url("/photos/wine.jpg");
   background-size: cover;
-  background-position: 0 -100px;
+  background-position: 0 -50px;
 }
 
 .art {
-  background-image: url("/photos/art.jpg");
+  background-image: url("/photos/painting.jpg");
   background-position: 0 -120px;
 }
 
