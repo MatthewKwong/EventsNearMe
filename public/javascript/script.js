@@ -1,5 +1,3 @@
-// Fast quick cards - longitude and latitude
-navigator.geolocation.getCurrentPosition(showPosition);
 
 
 //  Google Maps
@@ -36,13 +34,13 @@ $(document).ready(() => {
 
 
 
-function showPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-
-
-  console.log(latitude);
-  console.log(longitude);
+// function showPosition(position) {
+//   let latitude = position.coords.latitude;
+//   let longitude = position.coords.longitude;
+//
+//
+//   console.log(latitude);
+//   console.log(longitude);
 
   $('#sports').click(() => {
     $('#eventType').val('sports')
@@ -72,8 +70,9 @@ function showPosition(position) {
     console.log(queryString);
   })
 
-
-}
+  // Fast quick cards - longitude and latitude
+//   navigator.geolocation.getCurrentPosition(showPosition);
+// }
 // Banner Slideshow
 let slideIndex = 0;
 
