@@ -44,10 +44,11 @@ server.get('/search', (req, res) => {
   endTime = year + "-" + month + "-" + day + "T" + endTime + ":00Z";
   console.log("End time: " + endTime);
 
+  // const longitude = req.query.longitude;
+  // const latitude = req.query.latitude;
 
 
   fetch(`https://www.eventbriteapi.com/v3/events/search/?token=3OKSLFI7FNX2MJJFRLGY&sort_by=date&q=${eventType}&location.address=${location}&start_date.range_start=${startTime}&start_date.range_end=${endTime}`)
-
 
     //  going to the store with money and im returning with X
     .then(response => response.json()) // .json is the TYPE WE WANT
@@ -125,20 +126,19 @@ server.get('/search', (req, res) => {
         if (event.is_free === true) {
           event.price = "FREE";
         }
-
-
         return event;
       });
+
 
       //  render page
       res.render('results', {
         events: json.events,
       });
 
-
-
     }).catch(err => console.log(err));
 });
+
+
 
 
 
