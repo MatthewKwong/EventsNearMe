@@ -27,11 +27,17 @@ server.get('/', (req, res) => {
 //  Events variable
 server.get('/search', (req, res) => {
   /* Start and End Times Events  */
-  const eventType = req.query.eventType;
-  const location = req.query.location;
+  /*setting defaults to empty*/
+  let eventType = req.query.eventType != null ? req.query.eventType : '';
+  let location = req.query.location != null ? req.query.location : '';
+  let startTime = req.query.startTime != null ? req.query.startTime : '';
+  let endTime = req.query.endTime != null ? req.query.endTime : '';
 
-  let startTime = req.query.startTime;
-  let endTime = req.query.endTime;
+  if (location === '') {
+    res.redirect('/none')
+    return;
+  }
+
 
   const dateObj = new Date();
   const month = dateObj.getUTCMonth() + 1; //  months from 1-12
@@ -55,8 +61,11 @@ server.get('/search', (req, res) => {
     //  we have the stuff make ___ - THIS IS HANDLEBARS -.render is part of handlbars
 
     .then((json) => {
+
+
       // show the event time on each card
       json.events.map((event) => {
+
         event.start.formatted = new Date(event.start.local);
         console.log(event.start.local);
 
@@ -73,12 +82,10 @@ server.get('/search', (req, res) => {
         if (new Date(event.start.local).getHours() > 12) {
           event.start.hours = new Date(event.start.local).getHours() - 12;
           dayOrNight = 'pm';
-        }
-        else if(new Date(event.start.local).getHours() === 12) {
+        } else if (new Date(event.start.local).getHours() === 12) {
           event.start.hours = new Date(event.start.local).getHours();
           dayOrNight = 'pm';
-        }
-        else if(new Date(event.start.local).getHours() === 0) {
+        } else if (new Date(event.start.local).getHours() === 0) {
           event.start.hours = 12;
           dayOrNight = 'am';
         }
@@ -86,38 +93,33 @@ server.get('/search', (req, res) => {
         if (new Date(event.end.local).getHours() > 12) {
           event.end.hours = new Date(event.end.local).getHours() - 12;
           dayOrNight = 'pm';
-        }
-        else if(new Date(event.end.local).getHours() === 12) {
+        } else if (new Date(event.end.local).getHours() === 12) {
           event.end.hours = new Date(event.end.local).getHours();
           dayOrNight = 'pm';
-        }
-        else if(new Date(event.end.local).getHours() === 0) {
+        } else if (new Date(event.end.local).getHours() === 0) {
           event.end.hours = 12;
           dayOrNight = 'am';
         }
 
         // Start - Full complete output
-        event.start.startOutput = (event.start.hours + ":" +  event.start.minutes + dayOrNight);
+        event.start.startOutput = (event.start.hours + ":" + event.start.minutes + dayOrNight);
 
         //  If event needs :00
-        if(new Date(event.start.local).getMinutes() === 0) {
-          event.start.startOutput =  (event.start.hours + ":00" + dayOrNight);
-        }
-
-        else{
-          event.start.startOutput = (event.start.hours + ":" +  event.start.minutes + dayOrNight);
+        if (new Date(event.start.local).getMinutes() === 0) {
+          event.start.startOutput = (event.start.hours + ":00" + dayOrNight);
+        } else {
+          event.start.startOutput = (event.start.hours + ":" + event.start.minutes + dayOrNight);
         }
         console.log(event.start.startOutput);
 
         // End - Full complete output
-        event.end.endOutput = (event.end.hours + ":" +  event.end.minutes + dayOrNight);
+        event.end.endOutput = (event.end.hours + ":" + event.end.minutes + dayOrNight);
 
         //  If event needs :00
-        if(new Date(event.end.local).getMinutes() === 0) {
-          event.end.endOutput =  (event.end.hours + ":00" + dayOrNight);
-        }
-        else{
-          event.end.endOutput = (event.end.hours + ":" +  event.end.minutes + dayOrNight);
+        if (new Date(event.end.local).getMinutes() === 0) {
+          event.end.endOutput = (event.end.hours + ":00" + dayOrNight);
+        } else {
+          event.end.endOutput = (event.end.hours + ":" + event.end.minutes + dayOrNight);
         }
         console.log(event.end.endOutput);
 
@@ -126,13 +128,32 @@ server.get('/search', (req, res) => {
         if (event.is_free === true) {
           event.price = "FREE";
         }
+
+
+        if (json.pagination.page_count === 0) {
+
+          console.log("DS")
+
+        }
+
+
+
         return event;
       });
+
+
+
 
 
       //  render page
       res.render('results', {
         events: json.events,
+        searchInfo: {
+          eventType: eventType,
+          location: location,
+          startTime: startTime,
+          endTime: endTime
+        }
       });
 
     }).catch(err => console.log(err));

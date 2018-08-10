@@ -53,20 +53,21 @@
 
   <!-- Textfield with Floating Label -->
   <!-- <h1>HELLO</h1> -->
-  <h1 style = "text-align:center; margin-top: 0 auto; width:100%; margin-top: -80px;position:absolute; color:white;   text-shadow: 2px 2px black; ">EventsNearMe</h1>
+  <a href = "../"><h1 id = "logo">EventsNearMe</h1></a>
   <div class="searchbar">
 
     <form action="/search" method="GET" id="form">
 
       <!-- Type of Event -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top: 20px; ">
-        <input name="eventType" class="mdl-textfield__input " type="text" id="eventType" placeholder="Event or Category" style="color:white">
+        <input name="eventType" class="mdl-textfield__input " type="text" id="eventType" placeholder="Event or Category" style="color:white" value={{searchInfo.eventType}}>
         <!-- <label class="mdl-textfield__label " for="sample3">Event or Category</label> -->
       </div>
 
+
       <!-- Location  -->
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input name="location" class="mdl-textfield__input" id="location-autocomplete" type="text" id="sample3" placeholder="City, State" style="color:white">
+        <input name="location" class="mdl-textfield__input" id="location-autocomplete" type="text" id="sample3" placeholder="City, State" style="color:white" value={{searchInfo.location}}>
         <!-- <label class="mdl-textfield__label" for="sample3">Location</label> -->
       </div>
 
@@ -80,13 +81,13 @@
       <!--Sart Time-->
       <!-- Use something like https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_time -->
       <div id="startTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label test">
-        <input name="startTime" class="mdl-textfield__input time" id="startTime" type="time" id="sample3" value="00:00" placeholder="time">
+        <input name="startTime" class="mdl-textfield__input time" id="startTime" type="time" id="sample3" value="00:00" placeholder="time" value={{searchInfo.startTime}}>
         <!-- <label class="mdl-textfield__label"  for="sample3">Start Time</label> -->
       </div>
 
       <!-- End Time -->
       <div id="endTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input name="endTime" class="mdl-textfield__input time" id="endTime" class="endTime" type="time" value="23:59" placeholder="time">
+        <input name="endTime" class="mdl-textfield__input time" id="endTime" class="endTime" type="time" value="23:59" placeholder="time"value={{searchInfo.endTime}} >
         <!-- <label class="mdl-textfield__label" for="sample3">End Time</label> -->
       </div>
 

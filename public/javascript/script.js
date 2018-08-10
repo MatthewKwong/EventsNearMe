@@ -1,10 +1,10 @@
 
 
 //  Google Maps
-const input = document.getElementById('location-autocomplete');
-const autocomplete = new google.maps.places.Autocomplete(input, {
-  types: ['(cities)']
-});
+// const input = document.getElementById('location-autocomplete');
+// const autocomplete = new google.maps.places.Autocomplete(input, {
+//   types: ['(cities)']
+// });
 
 //  Start Time
 $(document).ready(() => {
@@ -30,8 +30,12 @@ $(document).ready(() => {
   }
 })
 
-
-
+$(document).ready(() => {
+  if (window.location.pathname === '/none') {
+    // remove boxes here
+    $('.box-container').hide();
+  }
+})
 
 
 // function showPosition(position) {
@@ -45,28 +49,28 @@ $(document).ready(() => {
   $('#sports').click(() => {
     $('#eventType').val('sports')
     const queryString = $('#form').formSerialize();
-    window.location.href = '/search?' + queryString;
+    window.location.href = '/search?location=san+francisco&' + queryString;
     console.log(queryString);
   })
 
   $('#food').click(() => {
     $('#eventType').val('food')
     const queryString = $('#form').formSerialize();
-    window.location.href = '/search?' + queryString;
+    window.location.href = '/search?location=san+francisco&' + queryString;
     console.log(queryString);
   })
 
   $('#art').click(() => {
     $('#eventType').val('art')
     const queryString = $('#form').formSerialize();
-    window.location.href = '/search?' + queryString;
+    window.location.href = '/search?location=san+francisco&' + queryString;
     console.log(queryString);
   })
 
   $('#music').click(() => {
     $('#eventType').val('music')
     const queryString = $('#form').formSerialize();
-    window.location.href = '/search?' + queryString;
+    window.location.href = '/search?location=san+francisco&' + queryString;
     console.log(queryString);
   })
 
