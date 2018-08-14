@@ -27,6 +27,11 @@ $(document).ready(() => {
   if (window.location.pathname === '/search') {
     // remove boxes here
     $('.box-container').hide();
+    if ($(window).width() < 667) {
+      $('#logo').css('padding-top','50px');
+      $('.searchbar').css('margin-top','0px');
+      $('.search-container').css('padding-top','425px');
+    }
   }
 })
 
