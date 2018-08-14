@@ -1,13 +1,42 @@
 @media only screen and (max-width: 667px) {
   #logo {
-    margin: 0 auto;
+    position: absolute;
+    background-color: #50ADD9;
+    font-size: 50px;
+    margin-top: -150px;
     width: 100%;
     text-align: center;
   }
   #banner-image {
+    /* position: absolute; */
+    padding: 0px;
+    margin: 0px;
     display: none;
   }
   .searchbar {
-    margin-top: 300px;
+    width: 300px;
+    margin-top: -50px;
+  }
+  .pushLeft, #startTime-textfield, #endTime-textfield {
+    width: 100%;
+  }
+  #submit {
+    width: 100%;
+  }
+  .box-container {
+    height: 350px;
+    padding: 380px 15px 0;
+    margin-bottom: -100px;
+  }
+  .box {
+    height: 165px;
+    width: 165px;
+  }
+  /* } */
+  .sports {
+    background-position: center;
+  }
+  .food, .art, .music {
+    background-position: 0 0;
   }
 }

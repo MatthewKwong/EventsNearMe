@@ -63,14 +63,14 @@
     <form action="/search" method="GET" id="form">
 
       <!-- Type of Event -->
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top: 20px; ">
-        <input name="eventType" class="mdl-textfield__input " type="text" id="eventType" placeholder="Event or Category" style="color:white" value={{searchInfo.eventType}}>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label pushLeft" style="margin-top: 20px;">
+        <input name="eventType" class="mdl-textfield__input " type="text" placeholder="Event or Category" style="color:white" value={{searchInfo.eventType}}>
         <!-- <label class="mdl-textfield__label " for="sample3">Event or Category</label> -->
       </div>
 
 
       <!-- Location  -->
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label pushLeft">
         <input name="location" class="mdl-textfield__input" id="location-autocomplete" type="text" id="sample3" placeholder="City, State" style="color:white" value={{searchInfo.location}}>
         <!-- <label class="mdl-textfield__label" for="sample3">Location</label> -->
       </div>

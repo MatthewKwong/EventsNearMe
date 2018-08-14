@@ -138,7 +138,8 @@ body {
   box-shadow: 0 1px rgba(0, 0, 0, .2);
 }
 
-#search-container {
+.search-container {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -147,7 +148,7 @@ body {
   padding-bottom: 15px;
 }
 
-#search-container>div {
+.search-container>div {
   display: flex;
   justify-content: center;
   margin: 15px 10px 0;
@@ -261,6 +262,7 @@ body {
 
 .sports {
   background-image: url("/photos/baseball.jpg");
+  background-size: cover;
 }
 
 .food {
@@ -271,6 +273,7 @@ body {
 
 .art {
   background-image: url("/photos/painting.jpg");
+  background-size: cover;
   background-position: 0 -120px;
 }
 
