@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+
   <title>EventsNearMe</title>
   <!--Material Light-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -18,6 +20,8 @@
   <!--Custom CSS-->
   <link rel="stylesheet" href="/css/landingPage.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/screens.css">
+
 
   <link rel = "icon" href = "/photos/ticket.png" type = "png" sizes="16x 16">
 </head>
@@ -82,13 +86,13 @@
       <!-- Use something like https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_time -->
       <div id="startTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label test">
         <input name="startTime" class="mdl-textfield__input time" id="startTime" type="time" id="sample3" value="00:00" placeholder="time" value={{searchInfo.startTime}}>
-        <!-- <label class="mdl-textfield__label"  for="sample3">Start Time</label> -->
+        <label class="mdl-textfield__label" for="sample3">Start Time</label>
       </div>
 
       <!-- End Time -->
       <div id="endTime-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input name="endTime" class="mdl-textfield__input time" id="endTime" class="endTime" type="time" value="23:59" placeholder="time"value={{searchInfo.endTime}} >
-        <!-- <label class="mdl-textfield__label" for="sample3">End Time</label> -->
+        <label class="mdl-textfield__label" for="sample3">End Time</label>
       </div>
 
       <button type="submit" id="submit" class="mdl-button mdl-js-button mdl-button--raised"><b>Search</b></button>
